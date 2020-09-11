@@ -20,6 +20,7 @@ When("user fill all personal information and click in register button") do |_Use
     expect(page).to have_selector('#email')
     @m_Page.fillPersonalInformation @m_Email, userData
     @m_Page.m_RegisterAccountButton.click
+    $m_Data = @m_Email + "_" + userData[:Password]
 end
 
 Then("your account is created") do

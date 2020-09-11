@@ -1,10 +1,13 @@
 class LoginPageUtils < SitePrism::Page
     set_url 'index.php'
     set_url "{?account_query*}"
+
     # MAIN PAGE
     element :m_SignInButton, "a[class='login']"
     element :m_CheckEmailInput, '#email_create'
     element :m_CreateAccountButton, '#SubmitCreate'
+    element :m_LoginButton, '#SubmitLogin'
+
     # FORM FIELDS
     element :m_RegisterAccountButton, '#submitAccount'
     element :m_MaleGenderRadio, '#id_gender1'
@@ -23,6 +26,9 @@ class LoginPageUtils < SitePrism::Page
     element :m_AliasField, '#alias'
 
     def login(_Email, _Password)
+        m_EmailField.set _Email
+        m_PasswordField.set _Password
+        m_LoginButton.click
     end
 
     def fillPersonalInformation(_Email, _UserData)

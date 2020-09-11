@@ -3,7 +3,8 @@ Feature: Authentication
 
     Background: Access website
         Given that user access website
-
+    
+    @NewAccount
     Scenario: Create an account
         Given that user access the authentication page
         And user can add your email address to start a new register
@@ -25,4 +26,10 @@ Feature: Authentication
             |       Alias               |       Spider Man          |
         Then your account is created
 
-        
+        @Login
+        Scenario: Login in website
+            Given that user access the authentication page
+            When user fill fields with following data: "washingtonqa@wqa.com" and "123456"
+            Then user access your account
+
+
