@@ -5,3 +5,7 @@ end
 Then("user access your account") do
     expect(page).to have_content("Welcome to your account. Here you can manage all of your personal information and orders.")
 end
+
+Then("page show alert feedback and following {string} should appears") do |_Message|
+    expect(@m_Page.m_FeedbackAlert.text).to eql(_Message)
+  end

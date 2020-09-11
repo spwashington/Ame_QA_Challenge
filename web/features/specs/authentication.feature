@@ -32,4 +32,20 @@ Feature: Authentication
             When user fill fields with following data: "washingtonqa@wqa.com" and "123456"
             Then user access your account
 
+        # Scenario: Login in website after create a new account
 
+
+        @InvalidLogin
+        Scenario Outline: Invalid Login in website
+            Given that user access the authentication page
+            When user fill fields with following data: "<Email>" and "<Password>"
+            Then page show alert feedback and following "<Message>" should appears
+
+            Examples:
+            |       Email           |    Password    |               Message             |
+            |                       |                |       An email address required.  |
+            |   teste@teste.com     |                |       Password is required.       |
+            |                       |     123456     |       An email address required.  |
+            |   tttttt@ttrtrtt.frfr |     teste123   |       Authentication failed.      |
+            |   teste#teste.com     |     123456     |       Invalid email address.      |
+            |   teste@teste.com     |     1          |       Invalid password.           |

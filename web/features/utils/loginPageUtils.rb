@@ -7,6 +7,7 @@ class LoginPageUtils < SitePrism::Page
     element :m_CheckEmailInput, '#email_create'
     element :m_CreateAccountButton, '#SubmitCreate'
     element :m_LoginButton, '#SubmitLogin'
+    element :m_FeedbackAlert, :xpath, '//*[@id="center_column"]/div[1]/ol/li'
 
     # FORM FIELDS
     element :m_RegisterAccountButton, '#submitAccount'
