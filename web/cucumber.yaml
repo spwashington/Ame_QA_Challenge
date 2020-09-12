@@ -1,0 +1,8 @@
+---
+#CUCUMBER SETUP
+default: -p chrome -p json --format progress
+html: --format html --out=fetaures/log/report_result.html
+json: --format json --out=features/log/report_result.json
+
+#AMBIENT VARIABLES
+chrome: BROWSER=chrome

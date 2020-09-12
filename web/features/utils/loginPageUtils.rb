@@ -9,6 +9,9 @@ class LoginPageUtils < SitePrism::Page
     element :m_LoginButton, '#SubmitLogin'
     element :m_FeedbackAlert, :xpath, '//*[@id="center_column"]/div[1]/ol/li'
 
+    # ACCOUNT PAGE
+    element :m_LogoutButton, "a[class='logout']"
+
     # FORM FIELDS
     element :m_RegisterAccountButton, '#submitAccount'
     element :m_MaleGenderRadio, '#id_gender1'
@@ -30,6 +33,23 @@ class LoginPageUtils < SitePrism::Page
         m_EmailField.set _Email
         m_PasswordField.set _Password
         m_LoginButton.click
+    end
+
+    def createAccount(_Password)
+        m_MaleGenderRadio.click
+        m_FirstNameField.set "Teste"
+        m_LastNameField.set "Teste"
+        m_PasswordField.set _Password
+        page.find_by_id('days').find("option[value='1']").select_option
+        page.find_by_id('months').find("option[value='1']").select_option
+        page.find_by_id('years').find("option[value='1980']").select_option
+        m_AddressField.set "Teste Address"
+        m_CityField.set "Teste"
+        find('#id_state option', :text => "Alaska").click
+        m_ZipcodeField.set "00000"
+        m_PhoneField.set "11900001111"
+        m_AliasField.set "teste"
+        m_RegisterAccountButton.click
     end
 
     def fillPersonalInformation(_Email, _UserData)

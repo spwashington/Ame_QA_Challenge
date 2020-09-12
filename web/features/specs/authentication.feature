@@ -32,8 +32,11 @@ Feature: Authentication
             When user fill fields with following data: "washingtonqa@wqa.com" and "123456"
             Then user access your account
 
-        # Scenario: Login in website after create a new account
-
+        @LoginAfterCreate
+        Scenario: Login in website after create a new account
+            Given that user access the authentication page
+            And user create a new account
+            Then user can login in website with your created account
 
         @InvalidLogin
         Scenario Outline: Invalid Login in website
