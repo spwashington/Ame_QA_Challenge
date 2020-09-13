@@ -1,0 +1,8 @@
+---
+#CUCUMBER SETUP
+default: -p api -p json --format progress
+html: --format html --out=features/log/report_result.html
+json: --format json --out=features/log/report_result.json
+
+#AMBIENT VARIABLES
+api: API=http://dummy.restapiexample.com/

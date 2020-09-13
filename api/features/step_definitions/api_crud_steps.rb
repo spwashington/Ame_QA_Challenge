@@ -10,8 +10,6 @@ end
 When("send a post request to create") do
     createUrl = @m_ApiUrl + 'api/v1/create'
     @m_Response = HTTParty.post(createUrl, :body => {:name => @m_Employee[:Name], :salary => @m_Employee[:Salary], :age => @m_Employee[:Age]})
-    puts @m_Response
-    # @m_Response = HTTParty.post(createUrl, :body => {"name":"#{@m_Employee[:Name]}","salary":"#{@m_Employee[:Salary]}","age":"#{@m_Employee[:Age]}"})
 end
 
 Then("API should return a {string} with message: {string} and Status code: {int}") do |_Status, _Message, _Code|
