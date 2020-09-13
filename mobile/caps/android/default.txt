@@ -3,3 +3,4 @@ platformName = "Android"
 deviceName = "0055951486"
 app = 'apps/product_registration.apk'
 appPackage = "br.com.pztec.estoque"
+autoGrantPermissions = true
