@@ -1,0 +1,5 @@
+[caps]
+platformName = "Android"
+deviceName = "0055951486"
+app = '/../../apps/cadastro_clientes_teste.apk'
+appPackage = "br.com.dudstecnologia.cadastrodeclientes"
