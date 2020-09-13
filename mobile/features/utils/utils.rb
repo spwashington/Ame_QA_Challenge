@@ -1,4 +1,4 @@
-UTILS SCRIPT COMMANDS#
+#UTILS SCRIPT COMMANDS
 class Utils
   def add_text(_ID, _Text, _System = "android")
     if _System == "android"
