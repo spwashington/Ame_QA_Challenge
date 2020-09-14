@@ -1,0 +1,108 @@
+[
+  {
+    "uri": "features/specs/crud_employee.feature",
+    "id": "crud-api",
+    "keyword": "Feature",
+    "name": "CRUD API",
+    "description": "    API should able to execute a crud in database\n    - Create a new employee\n    - Read a employee\n    - Update a new employee\n    - Delete a employee",
+    "line": 1,
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "Setup API",
+        "description": "",
+        "line": 8,
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "the API address",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/api_crud_steps.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 116945
+            }
+          }
+        ]
+      },
+      {
+        "id": "crud-api;create-employee",
+        "keyword": "Scenario",
+        "name": "Create employee",
+        "description": "",
+        "line": 25,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@CreateEmployee",
+            "line": 24
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "a data of a new employee",
+            "line": 26,
+            "rows": [
+              {
+                "cells": [
+                  "Name",
+                  "Tony"
+                ]
+              },
+              {
+                "cells": [
+                  "Age",
+                  "35"
+                ]
+              },
+              {
+                "cells": [
+                  "Salary",
+                  "4500"
+                ]
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/api_crud_steps.rb:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 199696
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "send a post request to create",
+            "line": 30,
+            "match": {
+              "location": "features/step_definitions/api_crud_steps.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1433319473
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "API should return a \"success\" with message: \"Successfully! Record has been added.\" and Status code: 200",
+            "line": 31,
+            "output": [
+              "{\"status\":\"success\",\"data\":{\"name\":\"Tony\",\"salary\":\"4500\",\"age\":\"35\",\"id\":350},\"message\":\"Successfully! Record has been added.\"}"
+            ],
+            "match": {
+              "location": "features/step_definitions/api_crud_steps.rb:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20881177
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

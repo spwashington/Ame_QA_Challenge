@@ -36,12 +36,8 @@ end
 Then("employee should not avaliable in database") do
     getUrl = @m_ApiUrl + "api/v1/employee/#{@m_Response.parsed_response["data"]["id"]}"
     response = HTTParty.get(getUrl)
-    
-    puts ">>>>>>>>>>>>>> CHECAR USER QDO FEZ O DELETE"
-    puts response
     expect(response.code).to eql(200)
     expect(response.parsed_response["status"]).to eql("success")
-    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>"
 end
 
 ##########GET A EMPLOYEE
