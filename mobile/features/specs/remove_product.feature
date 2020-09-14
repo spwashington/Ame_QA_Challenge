@@ -3,7 +3,7 @@ Feature: Remove a product
         - Must have a button Remove
         - Must have a confirm action to remove
 
-    Background: Open new register
+    Background: Create a product
         When user click in button new in register product screen
         Then screen to add information about a new product appears
         When the user fills the all required field and click in save button
@@ -12,6 +12,7 @@ Feature: Remove a product
             |   Value       |       2.00        |
         Then the new product is add in register product screen
 
+    @RemoveProd
     Scenario: Remove product in list
         When user click in button deletar must appears confirm action popup
         Then if user click yes the product should be remove from list
