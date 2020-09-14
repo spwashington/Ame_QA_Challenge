@@ -19,6 +19,11 @@ class Utils
     return temp
   end
 
+  def get_elements(_ID)
+    temp = $driver.find_elements :id, _ID
+    return temp
+  end
+
   def get_elements_by_class(_ClassName)
     temp = $driver.find_elements :class_name, _ClassName
     return temp
@@ -144,7 +149,6 @@ class Utils
       end
     end
   end
-
 
   def wait_element(_ID, _Timeout = 10)
     $driver.wait_true(timeout: _Timeout) { $driver.exists { $driver.find_element :id, _ID } }
