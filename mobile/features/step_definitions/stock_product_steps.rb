@@ -43,6 +43,7 @@ Given("which product stock increase {string} units in amount") do |_Amount|
 end
 
 Then("in required field should appears feedback about problem and can't be updated this product") do
+    #TODO: Get element of feedback popup error
     @m_Object.click "btn_salvar"
     temp = @m_Object.get_element "lbl_titulo"
     expect(temp.text).to eql("Adicionar estoque")

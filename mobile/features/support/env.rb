@@ -27,11 +27,11 @@ Before do
   @m_Object = Utils.new
 end
 
-# After do |scenario|
-#   filename = scenario.name.tr(' ', '_').downcase!
-#   filename = filename.gsub(/([_@#!%()\-=;><,{}\~\[\]\.\/\?\"\*\^\$\+\-]+)/, '')
-#   screenshot = "log/screenshot/#{filename}.png"
-#   $driver.screenshot screenshot
-#   embed(screenshot, 'image/png', 'Show screenshot')
-#   $driver.driver_quit
-# end
+After do |scenario|
+  filename = scenario.name.tr(' ', '_').downcase!
+  filename = filename.gsub(/([_@#!%()\-=;><,{}\~\[\]\.\/\?\"\*\^\$\+\-]+)/, '')
+  screenshot = "log/screenshot/#{filename}.png"
+  $driver.screenshot screenshot
+  embed(screenshot, 'image/png', 'Show screenshot')
+  $driver.driver_quit
+end

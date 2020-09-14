@@ -1,10 +1,9 @@
 # ##YAML Template
 
 # #CUCUMBER SETUP
-default: -p mobile -p device -p version -p perfil
-# default: -p mobile -p device -p version -p perfil -p json --format progress
-# html: --format html --out=log/report_result.html
-# json: --format json --out=log/report_result.json
+default: -p mobile -p device -p version -p perfil -p json --format progress
+html: --format html --out=log/report_result.html
+json: --format json --out=log/report_result.json
 
 #AMBIENT VARIABLES
 mobile: PLATFORM=android
