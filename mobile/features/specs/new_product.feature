@@ -23,13 +23,14 @@ Feature: Create a new product
             |   Description |  Test Product |
             |   Unit        |    testABC    |
             |   Amount      |       1       |
-            |   Value       |       1       |
+            |   Value       |       1.00    |
             |   Batch       |   test123abc  |
-            |   Validate    |   13/09/2020  |
+            |   Validate    |   13/09/2021  |
         Then the new product is add in register product screen
 
+    @NewProdErr
     Scenario Outline: Add product without required field
-        When the user fills the all fields and click in save button
+        When the user fills the some fields and click in save button
             |   Code        |    test123    |
             |   Description | <Description> |
             |   Unit        |    testABC    |
@@ -43,8 +44,8 @@ Feature: Create a new product
         |                   |             |            |
         |     teste123      |             |            |
         |     teste123      |      1      |            |
-        |     teste123      |             |     1      |
+        |     teste123      |             |     1.00   |
         |                   |      1      |            |
-        |                   |      1      |     1      |
-        |                   |             |     1      |
+        |                   |      1      |     1.00   |
+        |                   |             |     1.00   |
         
